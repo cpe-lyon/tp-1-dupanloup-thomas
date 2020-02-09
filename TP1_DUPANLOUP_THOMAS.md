@@ -1,6 +1,6 @@
 # Compte Rendu TP1 - DUPANLOUP - THOMAS
-## Exercice 2
-### Manuel
+## Exercice 2 -  Prise en main de l’interpréteur de commandes
+## Manuel
 **1. A l’aide du manuel, identifiez le rôle de la commande which**
 >which donne le chemin d’accès  absolu du fichier passé en argument. 
 
@@ -16,7 +16,7 @@ Une autre option est de lancer le manuel puis d’utiliser / et de taper le mot 
 première page de la section 6 ; de quoi parle cette section ?**<br>
 >La section 6 correspond aux jeux. On y accède en utilisant la commande $man 6 intro.<br>
 
-### Navigation dans l’arborescence des fichiers<br>
+## Navigation dans l’arborescence des fichiers<br>
 
 **1. allez dans le dossier /var/log**<br>
 >$cd /var/log
@@ -56,7 +56,7 @@ Dossier1 ; que se passe-t-il ?**<br>
 **11. comment supprimer en une seule commande Dossier2 et son contenu ?**
 >On utilise la commande $sudo rm -r dossier1
 
-### Commandes importantes <br>
+## Commandes importantes <br>
 
 **1. Quelle commande permet d’afficher l’heure ? A quoi sert la commande time ?**
 >La commande qui nous permet d’afficher l’heure est la commande $date. La commande $time nous permet de mesurer le temps utilisé par une certaine commande.
@@ -155,6 +155,6 @@ précédemment**
 >$locate test
 > On ne trouve pas le nouveau fichier test avec la commande locate puisque la base n'a pas été mise à jour via la commande updatedb.
 
-## Exercice 4
+## Exercice 4 - Personnalisation du shell
 **Pour obtenir la forme voulue:**
 >PS1='\e[35m[\A] - ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$'
