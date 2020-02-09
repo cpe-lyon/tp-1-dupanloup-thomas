@@ -37,11 +37,11 @@ première page de la section 6 ; de quoi parle cette section ?**<br>
 >Le shell nous indique que la commande n'est pas connue pour sudo
 >
 **7. à partir de votre dossier personnel, créez l’arborescence suivante :**
->Afin de créer notre arboressence nous utilisons les commandes mkdir ainsi que touch. 
->$sudo mkdir dossier1
->$sudo touch dossier1/fichier1
->$sudo mkdir dossier2/dossier2.1 dossier2/dossier2.2 -p
->$sudo touch dossier2/dossier2.2/fichier1 dossier2/dossier2.2/fichier2
+>Afin de créer notre arboressence nous utilisons les commandes mkdir ainsi que touch. <br>
+>$sudo mkdir dossier1<br>
+>$sudo touch dossier1/fichier1<br>
+>$sudo mkdir dossier2/dossier2.1 dossier2/dossier2.2 -p<br>
+>$sudo touch dossier2/dossier2.2/fichier1 dossier2/dossier2.2/fichier2<br>
 
 **8. revenez dans votre dossier personnel ; à l’aide de la commande rm, essayez de supprimer Fichier1, puis
 Dossier1 ; que se passe-t-il ?**<br>
@@ -66,12 +66,14 @@ sur les fichiers commençant par un point ?**
 >La commande $ls affiche l’ensemble des fichiers dossiers. La commande $la est un raccourci de la commande $la correspond à la commande $ls -A qui en plus d’afficher l’ensemble des fichiers affiche en plus les fichiers cachés ( ceux commençant par un point )
 >
 **3. Où se situe le programme ls ?**
-
 > Pour savoir ou est située la commande ls on utilise la commande $which ls. Le shell nous indique que la commande se trouve dans _bin_/ls
 > 
+
 **4. Essayez la commande ll. Existe-t-il une entrée de manuel pour cette commande ? Utilisez les commandes alias ou alias pour en savoir plus sur la nature de cette commande.**
->La commande ll ne dispose pas d’entrée dans le manuel. Ce qui est normal puisqu’il s’agit aussi d’un raccouri cette fois ci de la commande $ls -l . Cette commande permet d’afficher plus de détails sur les fichiers et dossiers ce trouvant dans le répertoir courant. De plus la commande alias permet de connaitre les raccourci (par exemple que $la correspond à $ls -a).
+>La commande ll ne dispose pas d’entrée dans le manuel. Ce qui est normal puisqu’il s’agit aussi d’un raccouri cette fois ci de la commande $ls -l . <br>
+Cette commande permet d’afficher plus de détails sur les fichiers et dossiers ce trouvant dans le répertoir courant. De plus la commande alias permet de connaitre les raccourci (par exemple que $la correspond à $ls -a).
 >
+
 **5. Quelle commande permet d’afficher les fichiers contenus dans le dossier /bin ?**
 >Pour obtenir le contenu de /bin on utilise la commande $ls /bin
 
@@ -90,14 +92,13 @@ sur les fichiers commençant par un point ?**
 **10. A quoi sert la commande file ? Essayez la sur des fichiers de types différents.**
 >La commande file permet de déterminer le type d’un fichier.
 >
-**11. Créez un fichier toto qui contient la chaîne Hello Toto ! ; créer ensuite un lien titi vers ce fichier**
-> 
+**11. Créez un fichier toto qui contient la chaîne Hello Toto ! ; créer ensuite un lien titi vers ce fichier Modifiez à présent le contenu de toto et affichez le contenu de titi :
+qu’observe-t-on ? Supprimez le fichier toto ; quelle conséquence cela a-t-il sur titi ?**
 > Afin de créer un fichier toto qui contient la chaine de caractère “hello toto !” on utilise la commande : $echo “Hello Toto !” > toto
 On créer ensuite un lien entre les fichiers avec la commande : $ln toto titi
-On va ensuite modifier toto avec la commande $echo “Hello titi !” >> toto
-On remarque que cela modifie aussi le fichier titi. Car titi s’agit d’un lien vers le fichier toto ainsi lorsque toto est modifié alors titi est modifié aussi.
-Cependant lorsque l’on supprime toto, titi n’est pas supprimmé avec la commande ln toto titi. Modifiez à présent le contenu de toto et affichez le contenu de titi :
-qu’observe-t-on ? Supprimez le fichier toto ; quelle conséquence cela a-t-il sur titi ?**
+Puis on modifie le fichier toto avec la commande $echo “Hello titi !” >> toto <br>
+On remarque que cela modifie aussi le fichier titi. Car titi s’agit d’un lien vers le fichier toto ainsi lorsque toto est modifié alors titi est modifié aussi.<br>
+Cependant lorsque l’on supprime toto, titi n’est pas supprimmé avec la commande ln toto titi.
 
 **12. Créez à présent un lien symbolique tutu sur titi avec la commande ln -s titi tutu. Modifiez le
 contenu de titi ; quelle conséquence pour tutu ? Et inversement ? Supprimez le fichier titi ; quelle
@@ -137,22 +138,22 @@ $man _etc/passwd_ contient le manuel de ce fichier.
 
 **21. Modifiez la commande précédente pour que la liste des fichiers trouvés soit enregistrée dans le fichier
 ~/list_passwd_files.txt et que les erreurs soient redirigées vers le fichier spécial /dev/null**
->find /  -name "passwd" | grep -o passwd | wc -l  > _/list_passwd_files.txt_
+>find /  -name "passwd" | grep -o passwd | wc -l  > _/list_passwd_files.txt_<br>
 >find /  -name "passwd" | grep -o passwd | wc -l 2>> _/list_passwd_files.txt_
 >
 
 **22. Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vu
 précédemment**
->$grep "ll" -r
+>$grep "ll" -r<br>
 >d'après le résultat l'alias est est défini dans le fichier .bashrc.
 
 **23. Utilisez la commande locate pour trouver le fichier history.log.**
->$ locate history.log
+>$ locate history.log <br>
 >/var/log/apt/history.log
 
 **24. Créer un fichier dans votre dossier personnel puis utilisez locate pour le trouver. Apparaît-il ? Pourquoi ?**
->$touch test
->$locate test
+>$touch test<br>
+>$locate test<br>
 > On ne trouve pas le nouveau fichier test avec la commande locate puisque la base n'a pas été mise à jour via la commande updatedb.
 
 ## Exercice 4 - Personnalisation du shell
